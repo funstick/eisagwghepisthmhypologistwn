@@ -9,7 +9,7 @@ tableHeight = input("Insert number of rows.  ")
 if (tableWidth*tableHeight)%2 != 0:
     tableContents = tableWidth*tableHeight/2 + 1
 else:tableContents = (tableWidth * tableHeight)/2
-#print(tableContents)
+
 
 def fillTable(x,y):
 
@@ -18,8 +18,7 @@ def fillTable(x,y):
             table.append(row)
             for z in range(y):
                 row.append(0)
-        #    print(row)
-        #print("")
+        
 
         count = 0
         while count < tableContents:
@@ -28,17 +27,13 @@ def fillTable(x,y):
                 table[sum].append(1)
                 count = count + 1
 
-        #for u in range(tableHeight):
-        #    print(table[u])
+        
 
         for k in range(tableHeight):
             for j in range(table[k].count(1)):
                 table[k].pop(0)
             random.shuffle(table[k])
-        #print("")
-        #for u in range(tableHeight):
-            #print(table[u])
-        #print("")
+        
 
 
 
@@ -51,11 +46,7 @@ def find4(x,y,z):
             if j+3<y:
                 if z[i][j] + z[i][j+1] + z[i][j+2] + z[i][j+3] == 4:
                     #print("hitH")
-                    sum = sum + 1
-            #elif j-3>0:
-            #    print(i,j)
-            #    if z[i][j] + z[i][j-1] + z[i][j-2] + z[i][j-3] == 4:
-            #        print("hitH",i,j)
+                    sum = sum + 1            
             if i+3<x:
                 if z[i][j] + z[i+1][j] + z[i+2][j] + z[i+3][j] == 4:
                     #print('hitV')
@@ -67,8 +58,7 @@ def find4(x,y,z):
             if ((j-3)>0) & ((i+3)<x):
                 if z[i][j] + z[i+1][j-1] + z[i+2][j-2] + z[i+3][j-3] == 4:
                     #print('hitRD')
-                    sum = sum + 1
-    #print('sum of  quads= ',sum)
+                    sum = sum + 1    
     return sum
 #fillTable(tableHeight,tableWidth)
 
